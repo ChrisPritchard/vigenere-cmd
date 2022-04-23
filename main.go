@@ -55,9 +55,9 @@ func main() {
 			} else if isLower(n) && newVal > 'z' {
 				newVal = 'a' + newVal - 'z' - byte(1)
 			} else if isUpper(n) && newVal < 'A' {
-				newVal = ('A' - newVal) + 'A'
+				newVal = 'Z' - ('A' - newVal - byte(1))
 			} else if isLower(n) && newVal < 'a' {
-				newVal = ('a' - newVal) + 'a'
+				newVal = 'z' - ('a' - newVal - byte(1))
 			}
 			result = append(result, newVal)
 			j++
